@@ -70,8 +70,7 @@ function App() {
         <p className="text-2xl text-base-content mb-6">About me </p>
         <p className="text-3xl sm:text-base md:text-3xl lg:text-4xl text-center align-middle leading-8 text-wrap">
           Hey, my name is Dantae. I’m 14 years old, and I’m a full-stack web
-          developer and game site owner. I also love FOSS apps and i use arch
-          btw.
+          developer and game site owner. I also love FOSS apps.
         </p>
 
         <p className="text-2xl text-base-content m-6">Skills</p>
