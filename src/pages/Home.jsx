@@ -75,10 +75,7 @@ function Home() {
       </div>
       <div className="card bg-base-300 p-[30px] m-7">
         <h1 className="text-3xl font-bold text-primary">About Me</h1>
-        <p>
-          Hello, I'm a web developer. I started coding in 2022 and made some
-          questionable decisions. Now, I still make questionable decisions.
-        </p>
+        <p>Hello, I'm a web developer. and i dont know what to put here.</p>
       </div>
       <div className="card bg-base-300 p-[30px] m-7">
         <h1 className="text-3xl font-bold text-secondary">Skills</h1>
