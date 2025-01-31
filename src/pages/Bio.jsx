@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { FaBackward, FaPause, FaPlay, FaForward } from "react-icons/fa";
 
 // Wallpaper Imports
-import Wallpaper from "/solar-eclipses-on-neptune-pixel-moewalls-com.mp4";
+import Wallpaper from "/power-poles-purple-sky-pixel-moewalls-com.mp4";
 
 // Audio Imports
 import Heartless from "../audio/heartless.mp3";
