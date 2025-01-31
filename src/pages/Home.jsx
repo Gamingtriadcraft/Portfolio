@@ -62,6 +62,12 @@ function Home() {
       link: "https://moonlight.silvereen.net/",
       image: "/moonlight.png",
     },
+    {
+      name: "Starlight",
+      description: "a VERY FAST unblocked games site!",
+      link: "https://gostarlight.xyz/",
+      image: "/starlight.png",
+    },
   ];
 
   return (
@@ -111,12 +117,18 @@ function Home() {
       <div className="card bg-base-300 p-[30px] m-7">
         <h1 className="text-3xl font-bold text-success">Contact & More</h1>
         <div className="flex gap-2 text-2xl mt-3">
-          <div className="bg-slate-900 rounded-full p-2 btn btn-circle text-2xl hover:bg-slate-900">
+          <a
+            className="bg-slate-900 rounded-full p-2 btn btn-circle text-2xl hover:bg-slate-900"
+            href="https://github.com/thedogecraft"
+          >
             <FaGithub />
-          </div>
-          <div className="bg-indigo-700 rounded-full p-2 btn btn-circle text-2xl hover:bg-indigo-900">
+          </a>
+          <a
+            className="bg-indigo-700 rounded-full p-2 btn btn-circle text-2xl hover:bg-indigo-900"
+            href="https://dsc.gg/parcoil"
+          >
             <FaDiscord />
-          </div>
+          </a>
           <a className="btn btn-circle hover:bg-base-100" href="/bio">
             BIO
           </a>

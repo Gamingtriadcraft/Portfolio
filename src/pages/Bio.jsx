@@ -1,16 +1,31 @@
-import Wallpaper from "/power-poles-purple-sky-pixel-moewalls-com.mp4";
+import { useEffect, useRef, useState } from "react";
+import { FaBackward, FaPause, FaPlay, FaForward } from "react-icons/fa";
+
+// Wallpaper Imports
+import Wallpaper from "/solar-eclipses-on-neptune-pixel-moewalls-com.mp4";
+
+// Audio Imports
 import Heartless from "../audio/heartless.mp3";
 import Notlikeus from "../audio/notlikeus.mp3";
 import SwimmingPools from "../audio/swimmingpools.mp3";
+import champion from "../audio/champion.m4a";
 import GoodLife from "../audio/goodlife.mp3";
-import niasinparis from "../audio/niasinparis.mp3"; // Add your additional song imports
-import HeartlessCover from "../audio/heartless.jpg"; // Add the respective cover image paths
-import NotlikeusCover from "../audio/notlikeus.jpg";
+import niasinparis from "../audio/niasinparis.mp3";
+import touchthesky from "../audio/touchthesky.m4a";
+import power from "../audio/power.m4a";
+import throughthewire from "../audio/throughthewire.m4a";
+import tvoff from "../audio/tvoff.m4a";
+
+// Cover Image Imports
+import HeartlessCover from "../audio/heartless.jpg";
 import SwimmingPoolsCover from "../audio/swimmingpools.jpg";
+import NotlikeusCover from "../audio/notlikeus.jpg";
+import gnx from "../audio/gnx.png";
+import collagedropout from "../audio/collagedropout.jpg";
+import latereg from "../audio/latereg.jpg";
+import bdtf from "../audio/bdtf.jpg";
 import niasinparisCover from "../audio/niasinparis.jpg";
 import GoodLifeCover from "../audio/goodlife.jpg";
-import { useEffect, useRef, useState } from "react";
-import { FaBackward, FaPause, FaPlay, FaForward } from "react-icons/fa";
 
 const audioTracks = [
   {
@@ -20,22 +35,34 @@ const audioTracks = [
     cover: HeartlessCover,
   },
   {
-    src: Notlikeus,
-    title: "Not Like Us",
-    artist: "Kendrick Lamar",
-    cover: NotlikeusCover,
+    src: champion,
+    title: "Champion",
+    artist: "Kanye West",
+    cover: GoodLifeCover,
   },
   {
-    src: SwimmingPools,
-    title: "Swimming Pools",
-    artist: "Kendrick Lamar",
-    cover: SwimmingPoolsCover,
+    src: touchthesky,
+    title: "Touch The Sky",
+    artist: "Kanye West, Lupe Fiasco",
+    cover: latereg,
+  },
+  // {
+  //   src: SwimmingPools,
+  //   title: "Swimming Pools",
+  //   artist: "Kendrick Lamar",
+  //   cover: SwimmingPoolsCover,
+  // },
+  {
+    src: power,
+    title: "Power",
+    artist: "Kanye West",
+    cover: bdtf,
   },
   {
-    src: niasinparis,
-    title: "Niggas In Paris",
-    artist: "JAY-Z, Kanye West",
-    cover: niasinparisCover,
+    src: tvoff,
+    title: "tv off",
+    artist: "Kendrick Lamar",
+    cover: gnx,
   },
   {
     src: GoodLife,
@@ -43,6 +70,25 @@ const audioTracks = [
     artist: "Kanye West",
     cover: GoodLifeCover,
   },
+  {
+    src: throughthewire,
+    title: "Through The Wire",
+    artist: "Kanye West",
+    cover: collagedropout,
+  },
+  // Uncomment these if needed
+  // {
+  //   src: Notlikeus,
+  //   title: "Not Like Us",
+  //   artist: "Kendrick Lamar",
+  //   cover: NotlikeusCover,
+  // },
+  // {
+  //   src: niasinparis,
+  //   title: "Niggas In Paris",
+  //   artist: "JAY-Z, Kanye West",
+  //   cover: niasinparisCover,
+  // },
 ];
 
 function Bio() {
@@ -151,7 +197,7 @@ function Bio() {
           <audio
             autoPlay
             ref={audioRef}
-            key={audioTracks[currentTrackIndex].src} // This ensures the audio changes when the track changes
+            key={audioTracks[currentTrackIndex].src}
             controlsList="nodownload noplaybackrate"
             className="w-full"
           >
