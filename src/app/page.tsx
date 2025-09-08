@@ -47,14 +47,14 @@ export default function Page() {
         repulsionStrength={0.5}
         glowIntensity={0.5}
         saturation={0.8}
-        hueShift={140}
+        hueShift={152}
         //@ts-ignore
         className="absolute inset-0 pointer-events-none"
       />
 
       {!showContent && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/50 z-20">
-          <ASCIIText text="Loading..." />
+          <ASCIIText text="Loading..." enableWaves={false} />
         </div>
       )}
       {info && (
