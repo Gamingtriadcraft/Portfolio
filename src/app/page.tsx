@@ -67,7 +67,7 @@ export default function Page() {
       percentage: 25,
     },
     {
-      name: "Python",
+      name: "Python ",
       icon: "devicon-python-plain",
       percentage: 20,
     },
@@ -87,7 +87,7 @@ export default function Page() {
         className="absolute inset-0 pointer-events-none"
       />
       <div className="relative z-10 flex flex-col items-center justify-center h-full gap-4">
-        <Avatar className="w-[300px] h-[300px] border-primary border-2">
+        <Avatar className="w-[300px] h-[300px] border-primary/20 border-2 ">
           <AvatarImage
             src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=2048`}
             alt={user.username}
@@ -98,7 +98,7 @@ export default function Page() {
           Hi im, <span className="text-primary">{user.display_name}</span>
         </p>
         <p>a frontend developer</p>
-        <Card className="w-full max-w-4xl mx-auto p-4 ">
+        <Card className="w-full max-w-4xl mx-auto p-4 bg-transparent backdrop-blur-sm border-primary/20">
           <CardHeader className="text-2xl font-bold mb-4">Languages</CardHeader>
           <CardContent className="flex flex-wrap justify-center gap-6">
             {skils.map((skill, index) => (
