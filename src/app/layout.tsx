@@ -5,7 +5,7 @@ import "./globals.css";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // pick the weights you want
+  weight: ["400", "500", "600", "700"],
 });
 
 const firaCode = Fira_Code({
@@ -14,10 +14,35 @@ const firaCode = Fira_Code({
   weight: ["400", "500", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "dantae.lol",
-  description: "the bio of the bios",
-};
+async function getDiscordAvatar() {
+  try {
+    const res = await fetch(
+      "https://api.lanyard.rest/v1/users/779230704222339104",
+      { next: { revalidate: 3600 } },
+    );
+    const data = await res.json();
+    const user = data.data.discord_user;
+    return `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=256`;
+  } catch (error) {
+    return null;
+  }
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const avatarUrl = await getDiscordAvatar();
+
+  return {
+    title: "dantae.lol",
+    description: "the bio of the bios",
+    icons: avatarUrl
+      ? {
+          icon: avatarUrl,
+          shortcut: avatarUrl,
+          apple: avatarUrl,
+        }
+      : undefined,
+  };
+}
 
 export default function RootLayout({
   children,
