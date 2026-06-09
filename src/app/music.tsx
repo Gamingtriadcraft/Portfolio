@@ -16,7 +16,7 @@ function Music() {
 
   return (
     <audio ref={audioRef} loop className="fixed bottom-4 right-4 w-48 z-50 ">
-      <source src="/bittersweet-poetry.wav" type="audio/wav" />
+      <source src="/Kanye.wav" type="audio/wav" />
       Your browser does not support the audio tag.
     </audio>
   );

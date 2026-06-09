@@ -31,38 +31,33 @@ async function getDiscordAvatar() {
 export async function generateMetadata(): Promise<Metadata> {
   const avatarUrl = await getDiscordAvatar();
 
-  return {
-    title: "dantae.lol",
-    description: "the bio of the bios",
-    icons: avatarUrl
-      ? {
-          icon: avatarUrl,
-          shortcut: avatarUrl,
-          apple: avatarUrl,
-        }
-      : undefined,
-  };
+return {
+    title: "Omar.rest",
+    description: "67",
+    icons: avatarUrl ? {
+        icon: avatarUrl,
+        shortcut: avatarUrl,
+        apple: avatarUrl,
+    } : undefined,
+};
 }
-
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-        />
-      </head>
-      <body
-        className={`${poppins.variable} ${firaCode.variable} antialiased dark`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <head>
+                <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+                />
+            </head>
+            <body className={`${poppins.variable} ${firaCode.variable} antialiased dark`}>
+                {children}
+            </body>
+        </html>
+    );
 }

@@ -10,7 +10,7 @@ import Music from "./music";
 
 async function fetchInfo() {
   const res = await fetch(
-    "https://api.lanyard.rest/v1/users/779230704222339104",
+    "https://api.lanyard.rest/v1/users/1459947837830729791",
   );
   if (!res.ok) throw new Error("Failed to fetch");
   return res.json();
@@ -40,39 +40,8 @@ export default function Page() {
     setTimeout(() => setShowContent(true), 100);
   };
 
-  const skils = [
-    { name: "Javascript", icon: "devicon-javascript-plain", percentage: 45 },
-    { name: "Linux", icon: "devicon-linux-plain", percentage: 56 },
-    { name: "React", icon: "devicon-react-original", percentage: 49 },
-    { name: "Typescript", icon: "devicon-typescript-plain", percentage: 36 },
-    { name: "Python", icon: "devicon-python-plain", percentage: 26 },
-  ];
-
-  const projects = [
-    {
-      name: "Sparkle",
-      description: "A Windows app to debloat and optimize your PC",
-      tech: ["React", "Electron"],
-      link: "https://parcoil.com/sparkle",
-    },
-    {
-      name: "Dotline",
-      description: "A modern crosshair overlay app for Windows/Linux",
-      tech: ["Typescript", "Electron", "React"],
-      link: "https://parcoil.com/dotline",
-    },
-    {
-      name: "updatectrl",
-      description: "A CLI Tool for automating project updates.",
-      tech: ["Go", "Docker"],
-      link: "https://github.com/parcoil/updatectrl",
-    },
-    {
-      name: "Lunaar",
-      description: "Unblocked Games website for school.",
-      tech: ["JavaScript"],
-      link: "https://github.com/parcoil/lunaar.org",
-    },
+  const skills = [
+    { name: "Linux", icon: "devicon-linux-plain", percentage: 28 },
   ];
 
   // const socials = [
@@ -139,12 +108,9 @@ export default function Page() {
               <AvatarFallback>{user.username[0]}</AvatarFallback>
             </Avatar>
             <p className="text-4xl font-bold ml-23">
-              Hi, I'm <span className="text-primary">Dantae</span>
-              <span className="text-secondary text-sm ml-2  mt-3">
-                ({user.display_name})
-              </span>
+              Hi, I'm <span className="text-primary">Omar</span>
             </p>
-            <p className="text-xl text-gray-300">Frontend Developer</p>
+            <p className="text-xl text-gray-300">Vibe coder</p>
 
             <div className="flex gap-2 items-center">
               <div
@@ -328,16 +294,24 @@ export default function Page() {
             <CardHeader className="text-2xl font-bold ">
               Languages & Tools
             </CardHeader>
-            <CardContent className="flex flex-wrap justify-center gap-6">
-              {skils.map((skill, index) => (
+            <CardContent className="flex flex-wrap justify-center items-center gap-6">
+              {skills.map((skill, index: number) => (
                 <div
                   key={index}
                   className="flex flex-col items-center gap-2 w-24 sm:w-28"
                 >
-                  <i
-                    className={`${skill.icon} text-2xl`}
-                    aria-hidden="true"
-                  ></i>
+                  {skill.icon ? (
+                    <i
+                      className={`${skill.icon} text-2xl mt-6`}
+                      aria-hidden="true"
+                    ></i>
+                  ) : skill.image ? (
+                    <img
+                      src={skill.image}
+                      alt={skill.name}
+                      className="w-12 h-12 opacity-50 mix-blend-lighten"
+                    />
+                  ) : null}
                   <p className="text-sm font-medium text-center">
                     {skill.name}
                   </p>
@@ -348,31 +322,6 @@ export default function Page() {
                     {skill.percentage}%
                   </p>
                 </div>
-              ))}
-            </CardContent>
-          </Card>
-
-          <Card className="w-full max-w-4xl mx-auto p-4 bg-transparent backdrop-blur-sm border-primary/20">
-            <CardHeader className="text-2xl font-bold">Projects</CardHeader>
-            <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {projects.map((project, index) => (
-                <a
-                  key={index}
-                  href={project.link}
-                  className="p-4 border border-primary/20 rounded-lg hover:border-primary/40 transition-all hover:scale-105 bg-black/20"
-                >
-                  <h3 className="text-lg font-bold mb-2">{project.name}</h3>
-                  <p className="text-sm text-gray-400 mb-3">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, i) => (
-                      <Badge key={i} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </a>
               ))}
             </CardContent>
           </Card>
@@ -409,7 +358,7 @@ export default function Page() {
                       Music
                     </p>
                     <p className="text-sm font-bold truncate">
-                      Bittersweet Poetry (Instrumental)
+                      Everything I am (Instrumental)
                     </p>
                     <p className="text-xs text-gray-400 truncate">
                       Kanye West · Graduation
@@ -429,12 +378,12 @@ export default function Page() {
             </Card>
 
             <div className="text-center text-gray-500 text-sm">
-              <p>© 2025 {user.display_name}. Built with React & Next.js</p>
+              <p>© 2025 Dantae. Built with React and Next.js</p>
             </div>
           </div>
           {/* 
           <div className="text-center text-gray-500 text-sm py-8">
-            <p>© 2025 {user.display_name}. Built with React & Next.js</p>
+            <p>© 2025 Dantae. Built with React and Next.js</p>
           </div> */}
         </div>
       )}
