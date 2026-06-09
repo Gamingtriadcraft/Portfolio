@@ -8,6 +8,13 @@ import { Badge } from "@/components/ui/badge";
 import { useEffect, useState } from "react";
 import Music from "./music";
 
+type Skill = {
+  name: string;
+  percentage: number;
+  icon?: string;
+  image?: string;
+};
+
 async function fetchInfo() {
   const res = await fetch(
     "https://api.lanyard.rest/v1/users/1459947837830729791",
@@ -40,7 +47,7 @@ export default function Page() {
     setTimeout(() => setShowContent(true), 100);
   };
 
-  const skills = [
+  const skills: Skill[] = [
     { name: "Linux", icon: "devicon-linux-plain", percentage: 28 },
   ];
 
